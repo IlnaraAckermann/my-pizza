@@ -1,10 +1,10 @@
 const PizzaCard = (props) => {
-  const { name, description, price } = props;
+  const { name, description, image } = props;
   return (
-    <div className="card">
-      <h2>{name}</h2>
+    <div className="pizza">
+      <h1>{name}</h1>
       <p>{description}</p>
-      <p>R$ {price}</p>
+      <img src={image} alt={name} />
     </div>
   );
 };

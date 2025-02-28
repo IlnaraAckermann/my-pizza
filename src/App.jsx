@@ -5,12 +5,20 @@ const App = () => {
   return (
     <div>
       <h1>Pizza Store</h1>
-      <PizzaCard name="Pepperoni" description="Pepperoni pizza" price={30} />
-      <PizzaCard name="Margherita" description="Margherita pizza" price={25} />
+      <PizzaCard
+        name="Pepperoni"
+        description="Pepperoni pizza"
+        image="/public/pizzas/pepperoni.webp"
+      />
+      <PizzaCard
+        name="Margherita"
+        description="Margherita pizza"
+        image="/public/pizzas/mediterraneo.webp"
+      />
       <PizzaCard
         name="Four Cheese"
         description="Four cheese pizza"
-        price={35}
+        image="/public/pizzas/four_cheese.webp"
       />
     </div>
   );
