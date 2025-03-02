@@ -1,4 +1,4 @@
-const PizzaCard = (props) => {
+const Pizza = (props) => {
   const { name, description, image } = props;
   return (
     <div className="pizza">
@@ -9,4 +9,4 @@ const PizzaCard = (props) => {
   );
 };
 
-export default PizzaCard;
+export default Pizza;
