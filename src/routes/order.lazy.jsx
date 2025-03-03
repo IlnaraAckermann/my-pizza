@@ -1,16 +1,21 @@
 import { useContext, useEffect, useState } from "react";
-import Pizza from "./Pizza";
-import Cart from "./Cart";
-import { currencyFormatter } from "./untils/formatters";
-import { CartContext } from "./context/context";
+import Pizza from "../Pizza";
+import Cart from "../Cart";
+import { currencyFormatter } from "../untils/formatters";
+import { CartContext } from "../context/context";
+import { createLazyFileRoute } from "@tanstack/react-router";
 
-export default function Order() {
+export const Route = createLazyFileRoute("/order")({
+  component: Order,
+});
+
+function Order() {
   const [pizzaTypes, setPizzaTypes] = useState([]);
   const [pizzaType, setPizzaType] = useState("pepperoni");
   const [pizzaSize, setPizzaSize] = useState("M");
   const [isLoading, setIsLoading] = useState(true);
   const [isCartLoading, setIsCartLoading] = useState(false);
-  const [cart, setCart] = useContext(CartContext)
+  const [cart, setCart] = useContext(CartContext);
 
   async function checkout() {
     setIsCartLoading(true);
@@ -19,7 +24,7 @@ export default function Order() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({cart}),
+      body: JSON.stringify({ cart }),
     });
     setCart([]);
     setIsCartLoading(false);
@@ -125,11 +130,7 @@ export default function Order() {
           </div>
         </form>
       </div>
-      {isCartLoading ? (
-        <h2>Placing Order...</h2>
-      ) : (
-        <Cart checkout={checkout} />
-      )}
+      {isCartLoading ? <h2>Placing Order...</h2> : <Cart checkout={checkout} />}
     </div>
   );
 }
