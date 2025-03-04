@@ -49,7 +49,7 @@ function Order() {
 
   if (!isLoading) {
     selectpizza = pizzaTypes.find((pizza) => pizza.id === pizzaType);
-    price = currencyFormatter.format(selectpizza.sizes[pizzaSize]);
+    price = currencyFormatter(selectpizza.sizes[pizzaSize]);
   }
 
   return (

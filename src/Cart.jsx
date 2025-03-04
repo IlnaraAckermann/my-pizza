@@ -28,7 +28,7 @@ export default function Cart({ checkout }) {
           </li>
         ))}
       </ul>
-      <h3>Total: {currencyFormatter.format(total)}</h3>
+      <h3>Total: {currencyFormatter(total)}</h3>
       <button onClick={checkout}>Checkout</button>
     </div>
   );
