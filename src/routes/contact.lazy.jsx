@@ -24,11 +24,27 @@ function ContactRoute() {
     },
   });
 
+  if (mutation.isLoading) {
+    return <h2>Loading...</h2>;
+  }
+
+  if (mutation.isError) {
+    return (
+      <>
+        <h2>Something went wrong</h2>
+        <button onClick={() => mutation.reset()}>Try again</button>
+      </>
+    );
+  }
+
   return (
     <div className="contact">
       <h2>Contact</h2>
       {mutation.isSuccess ? (
-        <p>Thanks for contacting us!</p>
+        <>
+          <h3>Thanks for contacting us!</h3>
+          <button onClick={() => mutation.reset()}>Send another message</button>
+        </>
       ) : (
         <form onSubmit={mutation.mutate}>
           <input name="name" placeholder="Name" />
