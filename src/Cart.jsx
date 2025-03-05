@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { currencyFormatter } from "./untils/formatters";
 import { CartContext } from "./context/context";
 
-export default function Cart({ checkout }) {
+export default function Cart({  checkout }) {
   const [cart, setCart] = useContext(CartContext);
   let total = 0;
 

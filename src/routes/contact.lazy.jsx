@@ -31,7 +31,7 @@ function ContactRoute() {
   if (mutation.isError) {
     return (
       <>
-        <h2>Something went wrong</h2>
+        <h3>Something went wrong</h3>
         <button onClick={() => mutation.reset()}>Try again</button>
       </>
     );
