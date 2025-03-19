@@ -17,8 +17,8 @@ export default class ErrorBoundary extends Component {
         <div className="error-boundary">
           <h1>Something went wrong.</h1>
           <p>
-            There was an error with this page. <Link to=" /">Click Here</Link>{" "}
-            to back to home page.
+            There was an error with this page. <Link to="/">Click Here</Link> to
+            back to home page.
           </p>
         </div>
       );

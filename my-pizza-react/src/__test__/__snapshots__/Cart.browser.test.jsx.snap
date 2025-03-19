@@ -1,5 +1,47 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`should render with has itens in the cart 1`] = `
+<DocumentFragment>
+  <div
+    class="cart"
+  >
+    <h2>
+      Cart
+    </h2>
+    <ul>
+      <li>
+        <span
+          class="size"
+        >
+          M
+        </span>
+        <span
+          class="type"
+        >
+           - pepperoni - 
+        </span>
+        <span
+          class="price"
+        >
+          $3.00
+        </span>
+        <button
+          class="remove-button"
+        >
+          remove
+        </button>
+      </li>
+    </ul>
+    <h3>
+      Total: $3.00
+    </h3>
+    <button>
+      Checkout
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`should render with nothing in the cart 1`] = `
 <DocumentFragment>
   <div
